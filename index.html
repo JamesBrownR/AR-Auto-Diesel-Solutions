@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Auto & Diesel Solutions | Expert Auto Repair in West Valley City, UT</title>
+    <meta name="description" content="Professional auto repair and diesel solutions in West Valley City. Expert service, honest pricing, and quality workmanship by owner Raul and team.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a472a;
+            --primary-light: #2d6b45;
+            --accent: #d4af37;
+            --dark: #1a1a1a;
+            --gray: #4a4a4a;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Hours Section */
+        .hours-section {
+            background-color: var(--white);
+        }
+
+        .hours-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+
+        .hours-list {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .hours-list h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .time {
+            color: var(--gray);
+        }
+
+        .closed {
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: var(--light-gray);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .review-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .review-body {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .load-more-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 12px 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .load-more-btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        .load-more-btn.hidden {
+            display: none;
+        }
+
+        /* Map Section */
+        .map-section {
+            background-color: var(--white);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--light-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        .contact-info-box {
+            background-color: var(--white);
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-info-box h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item h4 {
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .info-item p, .info-item a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: #27ae60;
+            color: var(--white);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-bar .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .services-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <a href="tel:+18015747207">📞 (801) 574-7207</a>
+                <a href="https://www.google.com/maps/place/AR+Auto+%26+Diesel+Solutions/@40.6961471,-112.0066338,17z" target="_blank">📍 4735 W 3500 S, West Valley City, UT 84120</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61571672261343" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">AR Auto <span>&</span> Diesel</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#hours">Hours</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>AR Auto & Diesel Solutions</h1>
+        <p>Expert automotive repair and diesel solutions in West Valley City. Quality service you can trust, backed by years of experience and dedication to excellence.</p>
+        <a href="#contact" class="cta-button">Schedule Service</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Diesel Repair & Maintenance</h3>
+                    <p>Comprehensive diesel engine diagnostics, repair, and preventative maintenance. From routine service to major repairs, we handle all diesel vehicle needs with expertise.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Auto Repair & Diagnostics</h3>
+                    <p>Complete automotive repair services including engine diagnostics, brake service, transmission repair, and electrical systems. State-of-the-art diagnostic equipment ensures accurate repairs.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Preventative Maintenance</h3>
+                    <p>Oil changes, fluid services, tire rotation, and scheduled maintenance to keep your vehicle running smoothly. Regular maintenance prevents costly repairs down the road.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Engine Performance</h3>
+                    <p>Performance tuning, engine rebuilds, and optimization services. Restore your vehicle's power and efficiency with our expert engine services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Brake & Suspension</h3>
+                    <p>Complete brake system repair and replacement, suspension diagnostics, and steering system service. Your safety is our top priority.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fleet Services</h3>
+                    <p>Comprehensive fleet maintenance and repair services for businesses. Keep your commercial vehicles on the road with minimal downtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="hours-section" id="hours">
+        <div class="container">
+            <h2 class="section-title">Business Hours</h2>
+            <div class="hours-content">
+                <div class="hours-list">
+                    <h3>We're Open</h3>
+                    <div class="hours-item">
+                        <span class="day">Monday</span>
+                        <span class="time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Tuesday</span>
+                        <span class="time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Wednesday</span>
+                        <span class="time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Thursday</span>
+                        <span class="time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Friday</span>
+                        <span class="time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Saturday</span>
+                        <span class="time">8:00 AM - 5:30 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Sunday</span>
+                        <span class="closed">Closed</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 24px;">Why Choose AR Auto & Diesel?</h3>
+                    <p style="color: var(--gray); line-height: 1.8; margin-bottom: 15px;">Under the expert leadership of owner Raul, AR Auto & Diesel Solutions has built a reputation for honest, reliable automotive service in West Valley City.</p>
+                    <p style="color: var(--gray); line-height: 1.8; margin-bottom: 15px;">We combine years of experience with modern diagnostic equipment to provide accurate, efficient repairs at fair prices. Our commitment to quality workmanship means your vehicle receives the care it deserves.</p>
+                    <p style="color: var(--gray); line-height: 1.8;">Whether you drive a diesel truck, family sedan, or commercial vehicle, our team has the expertise to keep you on the road safely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="reviews-grid" id="reviewsGrid"></div>
+            <button class="load-more-btn" id="loadMoreBtn">Show More Reviews</button>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="location">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.8247618847696!2d-112.0066338!3d40.6961471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87528dd642936189%3A0xa64ffb2f6b44ba67!2sAR%20Auto%20%26%20Diesel%20Solutions!5e0!3m2!1sen!2sus!4v1234567890"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <div class="success-message" id="successMessage">
+                        Thank you! Your message has been sent successfully. We'll get back to you soon.
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info-box">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <h4>Phone</h4>
+                        <a href="tel:+18015747207">(801) 574-7207</a>
+                    </div>
+                    <div class="info-item">
+                        <h4>Address</h4>
+                        <p>4735 W 3500 S<br>West Valley City, UT 84120</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <a href="mailto:info@arautodiesel.com">info@arautodiesel.com</a>
+                    </div>
+                    <div class="info-item">
+                        <h4>Follow Us</h4>
+                        <a href="https://www.facebook.com/profile.php?id=61571672261343" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 AR Auto & Diesel Solutions. All rights reserved.</p>
+        <p>Expert Auto Repair & Diesel Solutions in West Valley City, UT</p>
+    </footer>
+
+    <script>
+        // CONFIGURATION: Replace YOUR_LOCATION_ID with your actual Square location ID
+        const SQUARE_LOCATION_ID = 'YOUR_LOCATION_ID';
+        
+        // Reviews Data - Add your actual reviews here
+        const reviews = [
+            { name: "Customer 1", rating: 5, body: "" },
+            { name: "Customer 2", rating: 5, body: "" },
+            { name: "Customer 3", rating: 5, body: "" },
+            { name: "Customer 4", rating: 5, body: "" },
+            { name: "Customer 5", rating: 5, body: "" }
+        ];
+
+        // Reviews functionality
+        let currentReviewIndex = 0;
+        const reviewsPerPage = 6;
+
+        function displayReviews() {
+            const reviewsGrid = document.getElementById('reviewsGrid');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const endIndex = Math.min(currentReviewIndex + reviewsPerPage, reviews.length);
+            
+            for (let i = currentReviewIndex; i < endIndex; i++) {
+                const review = reviews[i];
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card';
+                reviewCard.innerHTML = `
+                    <div class="review-header">
+                        <span class="reviewer-name">${review.name}</span>
+                        <span class="stars">${'★'.repeat(review.rating)}</span>
+                    </div>
+                    ${review.body ? `<p class="review-body">${review.body}</p>` : ''}
+                `;
+                reviewsGrid.appendChild(reviewCard);
+            }
+            
+            currentReviewIndex = endIndex;
+            
+            // Update button text and visibility
+            const remainingReviews = reviews.length - currentReviewIndex;
+            if (remainingReviews > 0) {
+                loadMoreBtn.textContent = `Show ${remainingReviews} More`;
+            } else {
+                loadMoreBtn.classList.add('hidden');
+            }
+        }
+
+        document.getElementById('loadMoreBtn').addEventListener('click', displayReviews);
+
+        // Initial display
+        displayReviews();
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would typically send the data to your server or email service
+            // For now, we'll just show a success message
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.remove('show');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
